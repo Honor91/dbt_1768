@@ -2,7 +2,10 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'sales') }}
+    select 
+    *,
+    concat(orders_id,"_",pdt_id) AS PK
+    from {{ source('raw', 'sales') }}
 
 ),
 
@@ -13,10 +16,13 @@ renamed as (
         orders_id,
         pdt_id AS products_id,
         revenue,
-        quantity
+        quantity,
+        PK
 
     from source
 
 )
 
-select * from renamed
+select *
+from renamed
+

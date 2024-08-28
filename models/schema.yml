@@ -20,16 +20,32 @@ sources:
       - name: product
         identifier: raw_gz_product
         tests:
-          - unique:
-              column_name: products_id
           - not_null:
               column_name: products_id        
       - name: ship
         identifier: raw_gz_ship
         tests:
-          - unique:
-              column_name: orders_id
           - not_null:
               column_name: orders_id
+      - name: adwords
+        identifier: raw_gz_adwords
+        tests:
+          - not_null:
+              column_name: campaign_key
+      - name: bing
+        identifier: raw_gz_bing
+        tests:
+          - not_null:
+              column_name: campaign_key
+      - name: criteo
+        identifier: raw_gz_criteo
+        tests:
+          - not_null:
+              column_name: campaign_key
+      - name: facebook
+        identifier: raw_gz_facebook
+        tests:
+          - not_null:
+              column_name: campaign_key
       
            

@@ -4,7 +4,7 @@ select
     date_date,
     revenue,
     quantity,
-    purchase_price,
+    purchase_price
     from {{ref("stg_raw__sales")}}
     join {{ref("stg_raw__product")}}
     using(products_id)
